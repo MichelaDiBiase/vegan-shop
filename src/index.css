@@ -39,3 +39,29 @@ nav {
 .navButton {
   margin: 0 5px;
 }
+
+.loginText {
+  margin-top: 100px;
+  margin-right: 550px;
+  margin-left: 580px;
+}
+
+.emailBox {
+  margin-right: 600px;
+  margin-left: 600px;
+}
+
+.passwordBox {
+  margin-right: 600px;
+  margin-left: 600px;
+}
+
+.signInLink {
+  margin-left: 600px;
+}
+
+.signInText {
+  margin-top: 100px;
+  margin-right: 450px;
+  margin-left: 500px;
+}

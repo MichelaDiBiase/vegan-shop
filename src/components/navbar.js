@@ -28,9 +28,9 @@ function Navbar(){
             </button>
           </Link>
             
-          <Link className="navButton" to='#'>
+          <Link className="navButton" to='/Login'>
             <button type="button" className="btn btn-success">
-              Registrati
+              Accedi
             </button>
           </Link>
         </span>
