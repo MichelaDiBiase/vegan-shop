@@ -24,7 +24,7 @@ nav {
 }
 
 .logo {
-  margin-right: 10px;
+  margin-right: 3%;
 }
 
 .title {
@@ -32,36 +32,34 @@ nav {
   color: darkgreen;
 }
 
-.buttonsNavbar {
-  margin-right: 80px;
+.navbar-buttons {
+  margin-right: 3%;
 }
 
-.navButton {
+.nav-button {
   margin: 0 5px;
 }
 
-.loginText {
-  margin-top: 100px;
-  margin-right: 550px;
-  margin-left: 580px;
+.box-text {
+  margin-top: 5%;
+  text-align: center;
 }
 
-.emailBox {
-  margin-right: 600px;
-  margin-left: 600px;
+.box-control {
+  margin-left: 35%;
+  width: 30%;
 }
 
-.passwordBox {
-  margin-right: 600px;
-  margin-left: 600px;
+.box-label, .pass-text {
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
-.signInLink {
-  margin-left: 600px;
+.login-buttons {
+  margin-top: 2%;
+  text-align: center;
 }
 
-.signInText {
-  margin-top: 100px;
-  margin-right: 450px;
-  margin-left: 500px;
+.sign-up-button{
+  margin-right: 10%;
 }
