@@ -3,13 +3,19 @@ import Navbar from '../components/navbar.js';
 import Header from '../components/header.js';
 import Advertising from '../components/advertising.js';
 import Card from '../components/card.js';
-import latteSoia from '../img/latteSoia.webp';
+import tortaMirtilli from '../img/torta_veg_mirtilli.jpg';
+import biscottiVeg from '../img/biscottiVeg.jpg';
+import brownies from '../img/BROWNIES.jpg';
+import tiramisu from '../img/tiramisù.jpg';
 import biscotti from '../img/biscotti.jpg'
 
-class AlternativaLatte extends Component {
+class AlternativaDolci extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Latte di soia', immagine: latteSoia, button: 'Aggiungi al carello', link:'#' }
+      { id: 0, alimento: 'Biscotti con goccie di cioccolato', immagine: biscottiVeg, button: 'Aggiungi al carello', link:'#' },
+      { id: 1, alimento: 'Torta ai mirtilli e frutti di bosco', immagine: tortaMirtilli, button: 'Aggiungi al carello', link:'#' },
+      { id: 2, alimento: 'Brownies al ciccolato fondente', immagine: brownies, button: 'Aggiungi al carello', link:'#' },
+      { id: 3, alimento: 'Tiramisù', immagine: tiramisu, button: 'Aggiungi al carello', link:'#' },
     ],
     advertising: [
       { id: 0, titolo: 'Novità', descrizione: 'Biscotti natalizi', disponibilita: 'disponibili dal primo dicembre', immagine: biscotti }
@@ -50,4 +56,4 @@ class AlternativaLatte extends Component {
   }
 }
 
-export default AlternativaLatte;
+export default AlternativaDolci;

@@ -12,10 +12,10 @@ import Card from '../components/card.js';
 class Home extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Carne', immagine: carne, button:'Scopri di più', link:'#' },
-      { id: 1, alimento: 'Formaggi', immagine: formaggi, button:'Scopri di più', link:'#' },
-      { id: 2, alimento: 'Dolci', immagine: dolci, button:'Scopri di più', link:'#' },
-      { id: 3, alimento: 'Latte', immagine: latte, button:'Scopri di più', link:'/AlternativaLatte' }
+      { id: 0, alimento: 'Alternativa Carne', immagine: carne, button:'Scopri di più', link:'/AlternativaCarne' },
+      { id: 1, alimento: 'Alternativa Formaggi', immagine: formaggi, button:'Scopri di più', link:'/AlternativaFormaggi' },
+      { id: 2, alimento: 'Alternativa Dolci', immagine: dolci, button:'Scopri di più', link:'/AlternativaDolci' },
+      { id: 3, alimento: 'Alternativa Latte', immagine: latte, button:'Scopri di più', link:'/AlternativaLatte' }
     ],
     advertising: [
       { id: 0, titolo: 'Novità', descrizione: 'Biscotti natalizi', disponibilita: 'disponibili dal primo dicembre', immagine: biscotti }
