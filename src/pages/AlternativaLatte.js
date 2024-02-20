@@ -9,7 +9,7 @@ import biscotti from '../img/biscotti.jpg'
 class AlternativaLatte extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Latte di soia', immagine: latteSoia, button: 'Aggiungi al carello', link:'#' }
+      { id: 0, alimento: 'Latte di soia', immagine: latteSoia, button: 'Aggiungi al carello',prezzo:'9,00 kg',  link:'#' }
     ],
     advertising: [
       { id: 0, titolo: 'Novità', descrizione: 'Biscotti natalizi', disponibilita: 'disponibili dal primo dicembre', immagine: biscotti }
@@ -40,6 +40,7 @@ class AlternativaLatte extends Component {
               key={card.id}
               alimento={card.alimento}
               immagine={card.immagine}
+              prezzo={card.prezzo}
               button={card.button}
             />
           ))}

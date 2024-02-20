@@ -24,7 +24,7 @@ class Home extends Component {
 
   render() {
     return (
-      <>
+      <body>
         <Navbar />
         <div className="container">
         <div className="row">
@@ -52,7 +52,7 @@ class Home extends Component {
           ))}
         </div>
       </div> 
-      </>
+      </body>
     );
   }
 }

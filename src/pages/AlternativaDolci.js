@@ -12,10 +12,10 @@ import biscotti from '../img/biscotti.jpg'
 class AlternativaDolci extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Biscotti con goccie di cioccolato', immagine: biscottiVeg, button: 'Aggiungi al carello', link:'#' },
-      { id: 1, alimento: 'Torta ai mirtilli e frutti di bosco', immagine: tortaMirtilli, button: 'Aggiungi al carello', link:'#' },
-      { id: 2, alimento: 'Brownies al ciccolato fondente', immagine: brownies, button: 'Aggiungi al carello', link:'#' },
-      { id: 3, alimento: 'Tiramisù', immagine: tiramisu, button: 'Aggiungi al carello', link:'#' },
+      { id: 0, alimento: 'Biscotti', immagine: biscottiVeg, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
+      { id: 1, alimento: 'Torta ai mirtilli', immagine: tortaMirtilli, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
+      { id: 2, alimento: 'Brownies', immagine: brownies, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
+      { id: 3, alimento: 'Tiramisù', immagine: tiramisu, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
     ],
     advertising: [
       { id: 0, titolo: 'Novità', descrizione: 'Biscotti natalizi', disponibilita: 'disponibili dal primo dicembre', immagine: biscotti }
@@ -46,6 +46,7 @@ class AlternativaDolci extends Component {
               key={card.id}
               alimento={card.alimento}
               immagine={card.immagine}
+              prezzo={card.prezzo}
               button={card.button}
             />
           ))}

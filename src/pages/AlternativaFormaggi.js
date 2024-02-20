@@ -11,9 +11,9 @@ import biscotti from '../img/biscotti.jpg'
 class AlternativaFormaggi extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Ricotta di mandorle', immagine: ricottaDiMandorle, button: 'Aggiungi al carello', link:'#' },
-      { id: 1, alimento: 'Pistacchino', immagine: pistacchino, button: 'Aggiungi al carello', link:'#' },
-      { id: 2, alimento: 'Mozzarelle', immagine: mozzarella, button: 'Aggiungi al carello', link:'#' },
+      { id: 0, alimento: 'Ricotta di mandorle', immagine: ricottaDiMandorle, button: 'Aggiungi al carello',prezzo:'9,00 kg',  link:'#' },
+      { id: 1, alimento: 'Pistacchino', immagine: pistacchino, button: 'Aggiungi al carello',prezzo:'9,00 kg',  link:'#' },
+      { id: 2, alimento: 'Mozzarelle', immagine: mozzarella, button: 'Aggiungi al carello',prezzo:'9,00 kg',  link:'#' },
     ],
     advertising: [
       { id: 0, titolo: 'Novità', descrizione: 'Biscotti natalizi', disponibilita: 'disponibili dal primo dicembre', immagine: biscotti }
@@ -44,6 +44,7 @@ class AlternativaFormaggi extends Component {
               key={card.id}
               alimento={card.alimento}
               immagine={card.immagine}
+              prezzo={card.prezzo}
               button={card.button}
             />
           ))}

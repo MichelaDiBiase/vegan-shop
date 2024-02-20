@@ -11,9 +11,9 @@ import biscotti from '../img/biscotti.jpg'
 class AlternativaCarne extends Component {
   state = {
     card: [
-      { id: 0, alimento: 'Beef 3D', immagine: carne3D, button: 'Aggiungi al carello', link:'#' },
-      { id: 1, alimento: 'Burger di barbabietola', immagine: burger, button: 'Aggiungi al carello', link:'#' },
-      { id: 2, alimento: 'Macinato vegano', immagine: macinato, button: 'Aggiungi al carello', link:'#' }
+      { id: 0, alimento: 'Beef 3D', immagine: carne3D, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
+      { id: 1, alimento: 'Burger di barbabietola', immagine: burger, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' },
+      { id: 2, alimento: 'Macinato vegano', immagine: macinato, button: 'Aggiungi al carello',prezzo:'9,00 kg', link:'#' }
       
     ],
     advertising: [
@@ -23,7 +23,7 @@ class AlternativaCarne extends Component {
 
   render() {
     return (
-      <>
+      <body>
         <Navbar />
         <div className="container">
         <div className="row">
@@ -45,12 +45,13 @@ class AlternativaCarne extends Component {
               key={card.id}
               alimento={card.alimento}
               immagine={card.immagine}
+              prezzo={card.prezzo}
               button={card.button}
             />
           ))}
         </div>
       </div> 
-      </>
+      </body>
     );
   }
 }
