@@ -62,7 +62,40 @@ app.get("/getUsers", (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => { 
+app.get("/getUser", (req, res) => {
+
+  const authHeader = req.headers["cookie"];
+  const token = authHeader && authHeader.split('=')[1];
+  
+  if (!token) {
+    return res.status(403, "Error with token").send();
+      
+  }
+  
+  jwt.verify(token, secret, (err, email) => {
+    if (err) {
+      return res.sendStatus(403, "Error with token").send();
+    }
+    
+    db.query(
+      "SELECT * FROM users where email = ?",
+      email,
+      (err, result) => {
+        if(err) {
+          return res.status(403, "Error").send();
+        };
+
+        return res.json(result);
+      }
+    )
+
+  })
+
+  
+});
+
+
+app.post("/login", async (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
@@ -78,9 +111,9 @@ app.post("/login", async (req, res) => {
       if(result.length <= 0) {
         return res.status(403, "Error login").send();
       }
-
+        
       bcrypt.compare(password, result[0].password, (err, response) => {
-          if(response) {
+        if(response) {
 
           const jwtToken = jwt.sign(email, secret);
                         
@@ -90,9 +123,9 @@ app.post("/login", async (req, res) => {
           }
 
           res.cookie("token", jwtToken).send();
-      } else {
+        } else {
           return res.status(403, "Error login").send();
-      }
+        }
       });
     }
   )
@@ -105,7 +138,6 @@ app.post("/register", async (req, res) => {
   const surname = req.body.surname;
   const email = req.body.email;
   const password = req.body.password;
-
   const hash = await bcrypt.hash(password, saltRounds);
   
   if(name === "" || surname === "" || email === "" || password === "") {
@@ -141,6 +173,77 @@ app.post("/register", async (req, res) => {
       res.cookie("token", jwtToken).send();
     }
   )
+});
+
+
+app.post("/updateUser", async (req, res) => { 
+
+  const name = req.body.name;
+  const surname = req.body.surname;
+  const email = req.body.email;
+
+  const authHeader = req.headers["cookie"];
+  const token = authHeader && authHeader.split('=')[1];
+  
+  if(name === "" || surname === "" || email === "") {
+    return res.status(403, "Error login").send();
+  }
+
+  jwt.verify(token, secret, (err, email) => {
+    if (err) {
+      return res.sendStatus(403, "Error with token").send();
+    }
+        
+    db.query(
+      "UPDATE users SET name = ?, surname = ? WHERE email= ?",
+      [name, surname, email],
+      (err, result) => {
+        if(err) {
+          return res.status(403, "Error").send();
+        }
+        
+        return res.json(result);
+      }
+    )
+  });
+});
+
+
+app.post("/updatePassword", async (req, res) => { 
+
+  const password = req.body.password;
+  const email = req.body.email;
+  const hash = await bcrypt.hash(password, saltRounds);
+
+  const authHeader = req.headers["cookie"];
+  const token = authHeader && authHeader.split('=')[1];
+  
+  if(password === "" || email === "") {
+    return res.status(403, "Error login").send();
+  }
+
+  jwt.verify(token, secret, (err, email) => {
+    if (err) {
+      return res.sendStatus(403, "Error with token").send();
+    }
+        
+    db.query(
+      "UPDATE users SET password = ? WHERE email= ?",
+      [hash, email],
+      (err, result) => {
+        if(err) {
+          return res.status(403, "Error").send();
+        }
+        
+        return res.json(result);
+      }
+    )
+  });
+});
+
+
+app.get("/logout", async (req, res) => {
+  res.clearCookie("token").send();
 });
 
 module.exports = db;

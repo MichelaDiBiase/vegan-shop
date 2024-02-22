@@ -42,7 +42,7 @@ nav {
   margin: 0 5px;
 }
 
-@media(max-width:642px) {
+@media(max-width:643px) {
   .nav-button {
     display:none;
   }
@@ -93,6 +93,9 @@ nav {
   color: red;
 }
 
-.sign-up-button{
-  margin-right: 10%;
+.data-account, .account-name, .account-surname, .account-email, .password-lable {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
 }
+

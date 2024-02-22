@@ -7,6 +7,9 @@ import AlternativaDolci from './pages/AlternativaDolci';
 import AlternativaLatte from './pages/AlternativaLatte';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Account from './pages/Account';
+import ModifyAccount from './pages/ModifyAccount';
+import ModifyPassword from './pages/ModifyPassword';
 
 
 
@@ -22,6 +25,9 @@ function App() {
         <Route path="alternativaLatte" element={document.cookie ? <AlternativaLatte /> : <Login />} />
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
+        <Route path="account" element={<Account />} />
+        <Route path="updateAccount" element={<ModifyAccount />} />
+        <Route path="updatePassword" element={<ModifyPassword />} />
       </Routes>
     </BrowserRouter>
   );

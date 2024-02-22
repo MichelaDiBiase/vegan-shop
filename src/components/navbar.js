@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
 
-    return(
+  return(
     <nav>
       <div className="navbar">
         <Link className="navbar-brand" to='/'>
@@ -17,28 +17,28 @@ function Navbar() {
               Home
             </button>
           </Link>
-          
+            
           <Link className="nav-button" to='https://youtu.be/dQw4w9WgXcQ?feature=shared'>
             <button type="button" className="btn btn-success">
               Chi siamo
             </button>
           </Link>
-            
+              
           <Link className="nav-button" to='/signUp'>
             <button type="button" className="btn btn-success">
               Contattaci
             </button>
           </Link>
-            
-          <Link className="nav-button" to='/Login'>
+              
+          <Link className="essential-nav-button" to= {document.cookie ? '/account' : '/login'}>
             <button type="button" className="btn btn-success">
-              Accedi
+              { document.cookie ? "Account" : "Accedi" }
             </button>
           </Link>
         </div>
       </div>
     </nav>
-    );
+  );
 }
 
 export default Navbar;
