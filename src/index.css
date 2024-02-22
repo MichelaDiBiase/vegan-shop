@@ -25,6 +25,7 @@ nav {
 
 .logo {
   margin-right: 3%;
+  margin-left: 2%;
 }
 
 .title {
@@ -34,10 +35,17 @@ nav {
 
 .navbar-buttons {
   margin-right: 3%;
+  text-align: right;
 }
 
-.nav-button {
+.essential-nav-button, .nav-button {
   margin: 0 5px;
+}
+
+@media(max-width:642px) {
+  .nav-button {
+    display:none;
+  }
 }
 
 .box-text {
@@ -45,19 +53,44 @@ nav {
   text-align: center;
 }
 
-.box-control {
-  margin-left: 35%;
-  width: 30%;
+.form-login, .form-signup {
+  margin-top: 4%;
 }
 
-.box-label, .pass-text {
-  margin-left: 35%;
-  margin-right: 35%;
+.form-floating {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
 }
 
-.login-buttons {
+.border {
+  margin-right: 30%;
+  margin-left: 30%;
+}
+
+@media(max-width:1250px) {
+  .border {
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+}
+
+.pass-text {
+  text-align: center;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.login-buttons, .account-buttons, .signup-button {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.error-message {
   margin-top: 2%;
   text-align: center;
+  color: red;
 }
 
 .sign-up-button{

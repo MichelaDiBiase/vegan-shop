@@ -12,18 +12,16 @@ import SignUp from './pages/SignUp';
 
 function App() {
 
-  const login = localStorage.getItem("isLogedIn");
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="AlternativaCarne" element={login ? <AlternativaCarne /> : <Login />} />
-        <Route path="AlternativaFormaggi" element={login ? <AlternativaFormaggi /> : <Login />} />
-        <Route path="AlternativaDolci" element={login ? <AlternativaDolci /> : <Login />} />
-        <Route path="AlternativaLatte" element={login ? <AlternativaLatte /> : <Login />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="SignUp" element={<SignUp />} />
+        <Route path="alternativaCarne" element={document.cookie ? <AlternativaCarne /> : <Login />} />
+        <Route path="alternativaFormaggi" element={document.cookie ? <AlternativaFormaggi /> : <Login />} />
+        <Route path="alternativaDolci" element={document.cookie ? <AlternativaDolci /> : <Login />} />
+        <Route path="alternativaLatte" element={document.cookie ? <AlternativaLatte /> : <Login />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

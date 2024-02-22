@@ -1,7 +1,9 @@
 import logo from '../img/logo.jpg';
 import { Link } from 'react-router-dom';
 
-function Navbar(){
+
+function Navbar() {
+
     return(
     <nav>
       <div className="navbar">
@@ -9,8 +11,8 @@ function Navbar(){
           <img className="logo" src={logo} alt="" width="65" height="45" />
           <span className="title"><b>Vegan Shop</b></span>
         </Link>
-        <span className="navbar-buttons">
-          <Link className="nav-button" to='/'>
+        <div className="navbar-buttons">
+          <Link className="essential-nav-button" to='/'>
             <button type="button" className="btn btn-success">
               Home
             </button>
@@ -22,7 +24,7 @@ function Navbar(){
             </button>
           </Link>
             
-          <Link className="nav-button" to='/SignUp'>
+          <Link className="nav-button" to='/signUp'>
             <button type="button" className="btn btn-success">
               Contattaci
             </button>
@@ -33,9 +35,10 @@ function Navbar(){
               Accedi
             </button>
           </Link>
-        </span>
+        </div>
       </div>
     </nav>
     );
 }
+
 export default Navbar;

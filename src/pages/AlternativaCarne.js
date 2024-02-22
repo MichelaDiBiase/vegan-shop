@@ -6,7 +6,7 @@ import Card from '../components/card.js';
 import carne3D from '../img/Redefine-Beef-Flank.webp';
 import burger from '../img/burger.jpg';
 import macinato from '../img/Mince-850g-BG.jpg';
-import biscotti from '../img/biscotti.jpg'
+import biscotti from '../img/biscotti.jpg';
 
 class AlternativaCarne extends Component {
   state = {

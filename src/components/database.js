@@ -1,10 +1,21 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser')
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cookieParser());
+
+var corsConfiguration = {
+  origin: 'http://localhost:3000',
+  credentials: true
+}
+
+app.use(cors(corsConfiguration));
+
+const secret = "KDUvJKcOzgnfNSkZTcZR38ZmLWEdlWfa";
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -44,7 +55,7 @@ app.get("/getUsers", (req, res) => {
   db.query(
     "SELECT * FROM users",
     (err, results) => {
-      if(err) console.log("NON VA");
+      if(err) console.log("Error");
       res.send(results); 
     }
   ) 
@@ -55,26 +66,34 @@ app.post("/login", async (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
+  
+  if(email === "" || password === "") {
+    return res.status(403, "Error login").send();
+  }
 
   db.query(
     "SELECT * FROM users WHERE email = ?",
     email,
     (err, result) => {
-      if(err) {
-        console.log(err);
+      if(result.length <= 0) {
+        return res.status(403, "Error login").send();
       }
 
-      if(result.length > 0 || result == null) {
-        bcrypt.compare(password, result[0].password, (error, response) => {
+      bcrypt.compare(password, result[0].password, (err, response) => {
           if(response) {
-            res.send(result);
-          } else {
-            return res.send({ message: "Wrong email/password combination!" });
+
+          const jwtToken = jwt.sign(email, secret);
+                        
+          if(!jwtToken) {
+            res.clearCookie("token");
+            res.status(403, "Error login").send();
           }
-        });
+
+          res.cookie("token", jwtToken).send();
       } else {
-        return res.send({ message: "Email doesn't exist" });
+          return res.status(403, "Error login").send();
       }
+      });
     }
   )
 });
@@ -82,19 +101,44 @@ app.post("/login", async (req, res) => {
 
 app.post("/register", async (req, res) => { 
 
+  const name = req.body.name;
+  const surname = req.body.surname;
   const email = req.body.email;
   const password = req.body.password;
 
   const hash = await bcrypt.hash(password, saltRounds);
+  
+  if(name === "" || surname === "" || email === "" || password === "") {
+    return res.status(403, "Error login").send();
+  }
 
   db.query(
-    "INSERT INTO users (email, password) VALUES (?, ?)",
-    [email, hash],
+    "SELECT * FROM users WHERE email = ?",
+    email,
+    (err, result) => {
+      if(err || result.length > 0) {
+        return res.status(403, "Email already registered").send();
+      }
+      
+    }
+  )
+
+  db.query(
+    "INSERT INTO users (name, surname, email, password) VALUES (?, ?, ?, ?)",
+    [name, surname, email, hash],
     (err, result) => {
       if(err) {
-        return res.send("L'email è già presente");
+        return res.status(403, "Email already registered").send();
       }
-      res.json(result);
+      
+      const jwtToken = jwt.sign(email, secret);
+                        
+      if(!jwtToken) {
+        res.clearCookie("token");
+        res.status(403, "Login errato").send();
+        }
+
+      res.cookie("token", jwtToken).send();
     }
   )
 });
