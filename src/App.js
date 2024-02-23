@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import Account from './pages/Account';
 import ModifyAccount from './pages/ModifyAccount';
 import ModifyPassword from './pages/ModifyPassword';
+import DeletingAccount from './pages/DeletingAccount';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="account" element={<Account />} />
         <Route path="updateAccount" element={<ModifyAccount />} />
         <Route path="updatePassword" element={<ModifyPassword />} />
+        <Route path="deleteAccount" element={<DeletingAccount />} />
       </Routes>
     </BrowserRouter>
   );

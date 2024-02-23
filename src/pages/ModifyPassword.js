@@ -82,7 +82,7 @@ function ModifyPassword() {
                 </div>
             </form>
             <div className="error-message">
-                <label>{ message }</label>
+                <span>{ message }</span>
             </div>
         </div>
     );

@@ -60,8 +60,8 @@ function SignUp() {
                             <label htmlFor="floatingInput">Cognome</label>
                         </div>
                         <div className="form-floating">
-                            <input type="email" id="floatingInput" onChange={(e) => { setEmail(e.target.value) }} className="form-control" placeholder="nome@esempio.com" autoComplete="off" />
-                            <label htmlFor="floatingInput">Indirizzo Email</label>
+                            <input type="email" id="floatingInput" onChange={(e) => { setEmail(e.target.value) }} className="email-input form-control" placeholder="nome@esempio.com" autoComplete="off" />
+                            <label htmlFor="floatingInput">Indirizzo email</label>
                         </div>
                         <div className="form-floating">
                             <input type="password" id="floatingPassword" onChange={(e) => { setPassword(e.target.value) }} className="form-control" placeholder="Password" autoComplete="off" />

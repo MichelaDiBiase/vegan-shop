@@ -99,3 +99,19 @@ nav {
   text-align: center;
 }
 
+.deleting-lable {
+  margin-left: 25%;
+  text-decoration: underline;
+  color: royalblue;
+  cursor: pointer;
+}
+
+@media(min-width:1250px) {
+  .deleting-lable {
+    margin-left: 30%;
+  }
+}
+
+.email-input {
+  text-transform: lowercase;
+}

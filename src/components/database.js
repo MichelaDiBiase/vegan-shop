@@ -241,6 +241,58 @@ app.post("/updatePassword", async (req, res) => {
   });
 });
 
+app.delete("/deleteAccount", async (req, res) => {
+
+  const email = req.body.email; 
+  const password = req.body.password;
+
+  const authHeader = req.headers["cookie"];
+  const token = authHeader && authHeader.split('=')[1];
+  
+  if(password === "" || email === "") {
+    return res.status(403, "Error").send();
+  }
+
+  jwt.verify(token, secret, (err, tokenEmail) => {
+    if (err) {
+      return res.sendStatus(403, "Error with token").send();
+    }
+
+    if(tokenEmail === email) {
+      db.query(
+        "SELECT * FROM users WHERE email = ?",
+        email,
+        (err, result) => {
+          if(result.length <= 0) {
+            return res.status(403, "Error").send();
+          }
+            
+          bcrypt.compare(password, result[0].password, (err, response) => {
+            if(response) {
+
+              db.query(
+                "DELETE FROM users WHERE email = ?",
+                [email],
+                (err, result) => {
+                  if(err) {
+                    return res.status(403, "Error").send();
+                  }
+    
+                  return res.clearCookie("token").send();
+                }
+              )
+            } else {
+              return res.status(403, "Error").send();
+            }
+          });
+        }
+      )
+    } else {
+      return res.status(403, "Error").send();
+    }
+  });
+});
+
 
 app.get("/logout", async (req, res) => {
   res.clearCookie("token").send();

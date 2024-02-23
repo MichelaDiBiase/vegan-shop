@@ -22,7 +22,8 @@ function Account() {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "http://localhost:3000"
                 }
-            }).then(res => res.json())
+            })
+            .then(res => res.json())
             .then(jsonData => {
                 setName(jsonData[0].name);
                 setSurname(jsonData[0].surname);
@@ -30,7 +31,7 @@ function Account() {
             });
     }
 
-    function handleSubmit(e) {
+    function logout(e) {
         e.preventDefault();
 
         fetch("http://localhost:5000/logout", {
@@ -70,6 +71,11 @@ function Account() {
                         <span className="badge text-bg-dark" type="text" style={{ fontSize: "100%", textAlign: "left", width:"75%", marginRight: "3%", marginLeft: "3%" }}>{surname}</span>
                     </div>
                 </div>
+                <div className="account-delete">
+                    <Link to="/deleteAccount">
+                        <span className="deleting-lable">Elimina account</span>
+                    </Link>
+                </div>
                 <div className="account-buttons">
                     <Link to="/updatePassword">
                         <button className="btn btn-outline-dark"style={{ width: "17%", marginRight: "3%" }}>Aggiorna password</button>
@@ -77,7 +83,7 @@ function Account() {
                     <Link to="/updateAccount">
                         <button className="btn btn-outline-dark"style={{ width: "17%" }}>Aggiorna dati</button>
                     </Link>
-                    <button onClick={handleSubmit} className="btn btn-dark" style={{ width: "17%", marginLeft: "3%" }}>Log out</button>
+                    <button onClick={logout} className="btn btn-dark" style={{ width: "17%", marginLeft: "3%" }}>Log out</button>
                 </div>
             </form>
         </div>

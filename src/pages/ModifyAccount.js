@@ -53,7 +53,7 @@ function ModifyAccount() {
                     name: newName,
                     surname: newSurname,
                     email: email
-                }),
+                })
             })
             .then((response) => {
                 if(response.status === 403) {
@@ -91,7 +91,7 @@ function ModifyAccount() {
                 </div>
             </form>
             <div className="error-message">
-                <label>{ message }</label>
+                <span>{ message }</span>
             </div>
         </div>
     );
