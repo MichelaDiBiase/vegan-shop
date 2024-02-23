@@ -7,9 +7,6 @@ function Header() {
         <p className="lead">
           Alimenti Vegan, Vegetariani e Biologici nel rispetto della terra e di tutti i suoi abitanti.
         </p>
-        <button type="button" className="btn btn-outline-success">
-          Contattaci
-        </button>
       </div>
     );
   }

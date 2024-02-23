@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Card extends Component {
+class CardProduct extends Component {
+
   render() {
     return (
           <div className="col">
@@ -12,8 +13,9 @@ class Card extends Component {
               </Link>
               <div className="card-body">
                 <h2> {this.props.alimento}</h2>
-                <div className="price">{this.props.prezzo}</div>
-                <Link to={this.props.link} className="btn btn-success">{this.props.button}</Link>
+                <Link to={this.props.link}>
+                    <button className="category-button btn btn-success">Scopri di più</button>
+                </Link>
               </div>
             </div>
             </div>
@@ -25,4 +27,4 @@ class Card extends Component {
 
 
 
-export default Card;
+export default CardProduct;
