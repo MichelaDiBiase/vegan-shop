@@ -229,3 +229,29 @@ header {
     height: 240px;
   }
 }
+
+.cart-title {
+  padding-top: 5%;
+  text-align: center;
+}
+
+.cart-buttons {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.cart-closed-button, .cart-checkout-button {
+  padding-bottom: 5%;
+}
+
+.cart-closed-button {
+  margin-right: 3%;
+}
+
+.cart-checkout-button {
+  margin-left: 3%;
+}
+
+.cart-border {
+  min-height: 50px;
+}

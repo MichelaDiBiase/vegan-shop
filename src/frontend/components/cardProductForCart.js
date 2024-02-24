@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { addProductToCart } from '../../backend/dataCart';
+import { removeProductFromCart } from '../../backend/dataCart';
 
 function CardProduct(props) {
 
   const{ product } = props;
 
-  function addToCart(e) {
+  function removeFromCart(e) {
     e.preventDefault();
 
-    addProductToCart(product)
+    removeProductFromCart(product)
     console.log("Aggiunto al carrello");
   }
 
@@ -21,9 +20,7 @@ function CardProduct(props) {
         <div className="card-body">
           <h2> {product.alimento}</h2>
           <div className="price">€ {product.prezzo},00</div>
-            <Link to={document.cookie ? null : "/login"}>
-              <button className="product-button btn btn-success" onClick={document.cookie ? addToCart : null}>Aggiungi al carrello</button>
-            </Link>
+            <button className="product-button btn btn-success" onClick={document.cookie ? removeFromCart : null}>Elimina dal carrello</button>
           </div>
         </div>
       </div>

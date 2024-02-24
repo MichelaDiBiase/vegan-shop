@@ -1,4 +1,3 @@
-
 export const dataCart =  {
     cart: []
 }
@@ -18,5 +17,15 @@ export function setToLocalStorageCart() {
 
 export function addProductToCart(product) {
     dataCart.cart.push(product);
+    setToLocalStorageCart();
+}
+
+export function removeProductFromCart(product) {
+    dataCart.cart.splice(product.id, 1);
+    setToLocalStorageCart();
+}
+
+export function removeAllProductsFromCart() {
+    dataCart.cart = [];
     setToLocalStorageCart();
 }
