@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import AlternativaCarne from './pages/AlternativaCarne';
-import AlternativaFormaggi from './pages/AlternativaFormaggi';
-import AlternativaDolci from './pages/AlternativaDolci';
-import AlternativaLatte from './pages/AlternativaLatte';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import Account from './pages/Account';
-import ModifyAccount from './pages/ModifyAccount';
-import ModifyPassword from './pages/ModifyPassword';
-import DeletingAccount from './pages/DeletingAccount';
+import Home from './frontend/pages/Home';
+import AlternativaCarne from './frontend/pages/AlternativaCarne';
+import AlternativaFormaggi from './frontend/pages/AlternativaFormaggi';
+import AlternativaDolci from './frontend/pages/AlternativaDolci';
+import AlternativaLatte from './frontend/pages/AlternativaLatte';
+import Cart from './frontend/pages/Cart';
+import Login from './frontend/pages/Login';
+import SignUp from './frontend/pages/SignUp';
+import Account from './frontend/pages/Account';
+import ModifyAccount from './frontend/pages/ModifyAccount';
+import ModifyPassword from './frontend/pages/ModifyPassword';
+import DeletingAccount from './frontend/pages/DeletingAccount';
 
 
 
@@ -20,16 +21,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="alternativaCarne" element={document.cookie ? <AlternativaCarne /> : <Login />} />
-        <Route path="alternativaFormaggi" element={document.cookie ? <AlternativaFormaggi /> : <Login />} />
-        <Route path="alternativaDolci" element={document.cookie ? <AlternativaDolci /> : <Login />} />
-        <Route path="alternativaLatte" element={document.cookie ? <AlternativaLatte /> : <Login />} />
+        <Route path="alternativaCarne" element={<AlternativaCarne />} />
+        <Route path="alternativaFormaggi" element={<AlternativaFormaggi/>}/>
+        <Route path="alternativaDolci" element={<AlternativaDolci />}/>
+        <Route path="alternativaLatte" element={<AlternativaLatte />} />
+        <Route path="cart" element={<Cart />} />
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="account" element={<Account />} />
-        <Route path="updateAccount" element={<ModifyAccount />} />
-        <Route path="updatePassword" element={<ModifyPassword />} />
-        <Route path="deleteAccount" element={<DeletingAccount />} />
+        <Route path="modifyAccount" element={<ModifyAccount />} />
+        <Route path="modifyPassword" element={<ModifyPassword />} />
+        <Route path="deletingAccount" element={<DeletingAccount />} />
       </Routes>
     </BrowserRouter>
   );

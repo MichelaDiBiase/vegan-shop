@@ -1,10 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -14,38 +11,61 @@ code {
 
 nav {
   background: darkseagreen;
-  height: 70px;
+  height: 60px;
   width: 100%;
+  padding-top: 0.5%;
 }
 
-.navbar {
-  line-height: 40px;
-  margin-left: 20px;
+svg {
+    width: 40px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20px 0;   
+}
+
+.logo-title {
+  margin-bottom: 50px;
 }
 
 .logo {
-  margin-right: 3%;
+  margin-right: 0.5%;
   margin-left: 2%;
+  width: 50px;
 }
 
 .title {
+  margin-left: 5%;
   font-size: 25px;
   color: darkgreen;
 }
 
+.navbar-buttons, .header, .logo, .title {
+  display: inline-block;
+}
+
 .navbar-buttons {
-  margin-right: 3%;
-  text-align: right;
+  margin-right: 1%;
+  float: right;
 }
 
 .essential-nav-button, .nav-button {
   margin: 0 5px;
+  float: right;
 }
 
 @media(max-width:643px) {
   .nav-button {
     display:none;
   }
+}
+
+.row {
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .box-text {
@@ -114,4 +134,98 @@ nav {
 
 .email-input {
   text-transform: lowercase;
+}
+
+.sign-up-button{
+  margin-right: 10%;
+}
+
+.container{
+  width: 900px;
+  max-width: 90vw;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.navbar-buttons .icon-cart {
+  display: inline;
+  position: relative;
+  right: 12px;
+  color: black;
+}
+
+.navbar-buttons .icon-cart span{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 22px;
+}
+
+.container{
+  width: 900px;
+  max-width: 90vw;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.listProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Aumentato il minmax a 240px per garantire che le carte siano leggermente più grandi */
+  gap: 20px;
+}
+
+.listProduct .item img {
+  width: 100%;
+  height: 250px; /* Altezza fissa per l'immagine */
+  object-fit: cover;
+  filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct .item {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(156, 178, 146, 0.722);
+  padding: 20px;
+  flex-direction: column;
+  width: 280px;
+  height: 415px;
+}
+
+.listProduct h2 {
+  font-weight: 500;
+  font-size: large;
+  padding-top: 15%;
+}
+
+.listProduct .item .price {
+  letter-spacing: 7px;
+  font-size: small;
+  padding: 1%;
+  margin-bottom: 2px;
+}
+
+.carousel {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  width: 720px;
+  height: 360px;
+}
+
+.carousel img {
+  height: auto;
+}
+
+@media(max-width:750px) {
+  .carousel {
+    width: 460px;
+    height: 240px;
+  }
 }
