@@ -13,12 +13,10 @@ function AlternativaDolci() {
       <Advertising/>
       <Header />
       <div className="row">
-        {dataProduct.sweetProducts.map(card => (
+        {dataProduct.sweetProducts.map(product => (
         <CardProduct
-          key={card.id}
-          alimento={card.alimento}
-          immagine={card.immagine}
-          prezzo={card.prezzo}
+          key={product.id}
+          product={product}
         />
         ))}
       </div>

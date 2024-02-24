@@ -13,12 +13,10 @@ function AlternativaLatte() {
       <Advertising />
       <Header />
         <div className="row">
-          {dataCard.milkProducts.map(card => (
+          {dataCard.milkProducts.map(product => (
           <CardProduct
-            key={card.id}
-            alimento={card.alimento}
-            immagine={card.immagine}
-            prezzo={card.prezzo}
+            key={product.id}
+            product={product}
           />
         ))}
       </div>

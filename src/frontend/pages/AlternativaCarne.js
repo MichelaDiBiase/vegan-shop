@@ -14,12 +14,10 @@ function AlternativaCarne() {
       <Advertising />
       <Header />
         <div className="row">
-          {dataProduct.meetProducts.map(card => (
+          {dataProduct.meetProducts.map(product => (
             <CardProduct
-              key={card.id}
-              alimento={card.alimento}
-              immagine={card.immagine}
-              prezzo={card.prezzo}
+              key={product.id}
+              product={product}
             />
           ))}
         </div>

@@ -14,7 +14,6 @@ import ModifyPassword from './frontend/pages/ModifyPassword';
 import DeletingAccount from './frontend/pages/DeletingAccount';
 
 
-
 function App() {
 
   return (
@@ -29,8 +28,8 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="account" element={<Account />} />
-        <Route path="modifyAccount" element={<ModifyAccount />} />
-        <Route path="modifyPassword" element={<ModifyPassword />} />
+        <Route path="updateAccount" element={<ModifyAccount />} />
+        <Route path="updatePassword" element={<ModifyPassword />} />
         <Route path="deletingAccount" element={<DeletingAccount />} />
       </Routes>
     </BrowserRouter>
