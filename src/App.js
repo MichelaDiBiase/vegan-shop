@@ -8,6 +8,10 @@ import AlternativaLatte from './frontend/pages/AlternativaLatte';
 import Cart from './frontend/pages/Cart';
 import Login from './frontend/pages/Login';
 import SignUp from './frontend/pages/SignUp';
+import Account from './frontend/pages/Account';
+import ModifyAccount from './frontend/pages/ModifyAccount';
+import ModifyPassword from './frontend/pages/ModifyPassword';
+import DeletingAccount from './frontend/pages/DeletingAccount';
 
 
 
@@ -17,13 +21,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="AlternativaCarne" element={<AlternativaCarne />} />
-        <Route path="AlternativaFormaggi" element={<AlternativaFormaggi/>}/>
-        <Route path="AlternativaDolci" element={<AlternativaDolci />}/>
-        <Route path="AlternativaLatte" element={<AlternativaLatte />} />
-        <Route path="Cart" element={<Cart />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="SignUp" element={<SignUp />} />
+        <Route path="alternativaCarne" element={<AlternativaCarne />} />
+        <Route path="alternativaFormaggi" element={<AlternativaFormaggi/>}/>
+        <Route path="alternativaDolci" element={<AlternativaDolci />}/>
+        <Route path="alternativaLatte" element={<AlternativaLatte />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signUp" element={<SignUp />} />
+        <Route path="account" element={<Account />} />
+        <Route path="modifyAccount" element={<ModifyAccount />} />
+        <Route path="modifyPassword" element={<ModifyPassword />} />
+        <Route path="deletingAccount" element={<DeletingAccount />} />
       </Routes>
     </BrowserRouter>
   );

@@ -14,43 +14,58 @@ nav {
   height: 60px;
   width: 100%;
   padding-top: 0.5%;
-  
 }
 
-svg{
+svg {
     width: 40px;
 }
 
-header{
+header {
   display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:20px 0;   
+  align-items: center;
+  justify-content: space-between;
+  padding:20px 0;   
+}
+
+.logo-title {
+  margin-bottom: 50px;
 }
 
 .logo {
-  margin-right: 3%;
-  margin-left: 1% ;
-  width: 50px;  
+  margin-right: 0.5%;
+  margin-left: 2%;
+  width: 50px;
 }
 
 .title {
+  margin-left: 5%;
   font-size: 25px;
   color: darkgreen;
 }
 
-.navbar-buttons {
-  margin-right: 5%;
-  margin-left: 50%;
+.navbar-buttons, .header, .logo, .title {
+  display: inline-block;
 }
 
-.nav-button {
+.navbar-buttons {
+  margin-right: 1%;
+  float: right;
+}
+
+.essential-nav-button, .nav-button {
   margin: 0 5px;
+  float: right;
+}
+
+@media(max-width:643px) {
+  .nav-button {
+    display:none;
+  }
 }
 
 .row {
   padding-left: 3%;
-  padding-right: 4.5%;
+  padding-right: 3%;
 }
 
 .box-text {
@@ -58,19 +73,67 @@ header{
   text-align: center;
 }
 
-.box-control {
-  margin-left: 35%;
-  width: 30%;
+.form-login, .form-signup {
+  margin-top: 4%;
 }
 
-.box-label, .pass-text {
-  margin-left: 35%;
-  margin-right: 35%;
+.form-floating {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
 }
 
-.login-buttons {
+.border {
+  margin-right: 30%;
+  margin-left: 30%;
+}
+
+@media(max-width:1250px) {
+  .border {
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+}
+
+.pass-text {
+  text-align: center;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.login-buttons, .account-buttons, .signup-button {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.error-message {
   margin-top: 2%;
   text-align: center;
+  color: red;
+}
+
+.data-account, .account-name, .account-surname, .account-email, .password-lable {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.deleting-lable {
+  margin-left: 25%;
+  text-decoration: underline;
+  color: royalblue;
+  cursor: pointer;
+}
+
+@media(min-width:1250px) {
+  .deleting-lable {
+    margin-left: 30%;
+  }
+}
+
+.email-input {
+  text-transform: lowercase;
 }
 
 .sign-up-button{
@@ -84,29 +147,34 @@ header{
   padding-top: 10px;
 }
 
-.header .icon-cart {
+.navbar-buttons .icon-cart {
+  display: inline;
   position: relative;
+  right: 12px;
+  color: black;
 }
 
-.header .icon-cart span{
+.navbar-buttons .icon-cart span{
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: red;
     justify-content: center;
     align-items: center;
     color: #fff;
     border-radius: 50%;
     position: absolute;
-    top:50%;
-    right: -20px;
+    top: 15px;
+    left: 22px;
 }
+
 .container{
   width: 900px;
   max-width: 90vw;
   margin: auto;
   padding-top: 10px;
 }
+
 .listProduct {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Aumentato il minmax a 240px per garantire che le carte siano leggermente più grandi */
@@ -156,8 +224,8 @@ header{
 }
 
 @media(max-width:750px) {
-.carousel {
-  width: 460px;
-  height: 240px;
-}
+  .carousel {
+    width: 460px;
+    height: 240px;
+  }
 }
