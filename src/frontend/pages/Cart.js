@@ -34,7 +34,7 @@ function Cart() {
         </div>
         <div className="cart-buttons">
           <Link className="cart-closed-button" to='/'>
-            <button type="button" className="btn btn-success">
+            <button type="button" className="btn btn-outline-success">
               CHIUDI
             </button>
           </Link>

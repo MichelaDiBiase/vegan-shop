@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/navbar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ModifyAccount() {
 
@@ -87,7 +87,10 @@ function ModifyAccount() {
                     </div>
                 </div>
                 <div className="account-buttons">
-                    <button onClick={updateData} className="btn btn-outline-dark"style={{ width: "17%" }}>Aggiorna dati</button>
+                    <Link to="/account">
+                        <button className="btn btn-outline-dark"style={{ width: "17%", marginRight: "3%" }}>Chiudi</button>
+                    </Link>
+                    <button onClick={updateData} className="btn btn-dark" style={{ width: "17%", marginLeft: "3%" }}>Aggiorna dati</button>
                 </div>
             </form>
             <div className="error-message">
