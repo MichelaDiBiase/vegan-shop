@@ -4,12 +4,11 @@ import Header from '../components/header.js';
 import Advertising from '../components/advertising.js';
 import CardCategory from '../components/cardCategory.js';
 import dataCategory from '../../backend/dataCategory.js';
-import { createLocalStorageCart } from '../../backend/dataCart.js';
 
 function Home() {
 
     return (
-      <div onLoad={createLocalStorageCart}>
+      <div>
         <Navbar />
         <Advertising/>
         <Header />

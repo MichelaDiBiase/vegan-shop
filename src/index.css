@@ -255,3 +255,14 @@ header {
 .cart-border {
   min-height: 50px;
 }
+
+.product-quantity {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-right: 22%;
+  width: 110px;
+}
+
+.value-quantity-product {
+  text-align: center;
+}

@@ -21,20 +21,20 @@ const dataProduct = {
     { id: 3, alimento: 'Tofù', immagine: tofu, prezzo: 7 }
   ],
   cheeseProducts: [
-    { id: 0, alimento: 'Ricotta di mandorle', immagine: ricottaDiMandorle, prezzo:8 },
-    { id: 1, alimento: 'Pistacchino', immagine: pistacchino, prezzo: 15 },
-    { id: 2, alimento: 'Mozzarelle', immagine: mozzarella, prezzo: 10 },
-    { id: 3, alimento: 'Caciotta al tofu', immagine: caciotta, prezzo: 11 },
-    { id: 4, alimento: 'Formaggio alle noci', immagine: formaggioNoci, prezzo: 6 }
+    { id: 4, alimento: 'Ricotta di mandorle', immagine: ricottaDiMandorle, prezzo:8 },
+    { id: 5, alimento: 'Pistacchino', immagine: pistacchino, prezzo: 15 },
+    { id: 6, alimento: 'Mozzarelle', immagine: mozzarella, prezzo: 10 },
+    { id: 7, alimento: 'Caciotta al tofu', immagine: caciotta, prezzo: 11 },
+    { id: 8, alimento: 'Formaggio alle noci', immagine: formaggioNoci, prezzo: 6 }
   ],
   sweetProducts: [
-    { id: 0, alimento: 'Biscotti', immagine: biscottiVeg, prezzo: 5 },
-    { id: 1, alimento: 'Torta ai mirtilli', immagine: tortaMirtilli, prezzo: 7 },
-    { id: 2, alimento: 'Brownies', immagine: brownies, prezzo: 6 },
-    { id: 3, alimento: 'Tiramisù', immagine: tiramisu, prezzo: 5 }
+    { id: 9, alimento: 'Biscotti', immagine: biscottiVeg, prezzo: 5 },
+    { id: 10, alimento: 'Torta ai mirtilli', immagine: tortaMirtilli, prezzo: 7 },
+    { id: 11, alimento: 'Brownies', immagine: brownies, prezzo: 6 },
+    { id: 12, alimento: 'Tiramisù', immagine: tiramisu, prezzo: 5 }
   ],
   milkProducts: [
-    { id: 0, alimento: 'Latte di soia', immagine: latteSoia, prezzo: 2 }
+    { id: 13, alimento: 'Latte di soia', immagine: latteSoia, prezzo: 2 }
   ]
 }
 

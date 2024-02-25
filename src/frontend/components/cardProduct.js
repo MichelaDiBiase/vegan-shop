@@ -10,7 +10,6 @@ function CardProduct(props) {
     e.preventDefault();
 
     addProductToCart(product)
-    console.log("Aggiunto al carrello");
   }
 
   return (
@@ -18,9 +17,11 @@ function CardProduct(props) {
       <div className="listProduct">
         <div className="item">
           <img src={product.immagine} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h2> {product.alimento}</h2>
-          <div className="price">€ {product.prezzo},00</div>
+          <div className="card-body">
+            <h2> {product.alimento}</h2>
+            <div className="price">
+              <span>€ {product.prezzo},00</span>
+            </div>
             <Link to={document.cookie ? null : "/login"}>
               <button className="product-button btn btn-success" onClick={document.cookie ? addToCart : null}>Aggiungi al carrello</button>
             </Link>

@@ -2,30 +2,24 @@ export const dataCart =  {
     cart: []
 }
 
-export function createLocalStorageCart(e) {
-    e.preventDefault();
-
-    if(!localStorage.getItem('cart')) {
-        localStorage.setItem('cart', JSON.stringify(dataCart.cart));
-    }
-}
-
-export function setToLocalStorageCart() {
+function setCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(dataCart.cart));
-    console.log(dataCart.cart);
 }
 
 export function addProductToCart(product) {
-    dataCart.cart.push(product);
-    setToLocalStorageCart();
+    if(!dataCart.cart.find(p => p.id===product.id))
+    {
+        dataCart.cart.push(product);
+        setCartToLocalStorage();
+    }
 }
 
 export function removeProductFromCart(product) {
-    dataCart.cart.splice(product.id, 1);
-    setToLocalStorageCart();
+    dataCart.cart.splice(dataCart.cart.findIndex(p => p.id===product.id), 1);
+    setCartToLocalStorage();
 }
 
 export function removeAllProductsFromCart() {
     dataCart.cart = [];
-    setToLocalStorageCart();
+    setCartToLocalStorage();
 }

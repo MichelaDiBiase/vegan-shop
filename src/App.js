@@ -30,7 +30,7 @@ function App() {
         <Route path="account" element={<Account />} />
         <Route path="updateAccount" element={<ModifyAccount />} />
         <Route path="updatePassword" element={<ModifyPassword />} />
-        <Route path="deletingAccount" element={<DeletingAccount />} />
+        <Route path="deleteAccount" element={<DeletingAccount />} />
       </Routes>
     </BrowserRouter>
   );
